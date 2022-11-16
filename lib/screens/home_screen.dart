@@ -8,8 +8,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    body: SafeArea(
-      child: Stack(
+      body: Stack(
         children: const [
           Align(
             alignment: Alignment.bottomCenter,
@@ -18,7 +17,6 @@ class HomeScreen extends StatelessWidget {
           CustomAppBar(),
         ],
       ),
-    ),
     );
   }
 }
