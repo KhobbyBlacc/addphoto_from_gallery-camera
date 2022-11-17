@@ -6,7 +6,7 @@ class WaveClipper extends CustomClipper<Path>{
   Path getClip(Size size) {
     
       var path = new Path();
-      path.lineTo(0, size.height); //start path with this if you are making at bottom
+      path.lineTo(0, size.height); //start path with this if you are making at wave
       
       var firstStart = Offset(size.width / 5, size.height); 
       //fist point of quadratic bezier curve

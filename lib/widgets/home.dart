@@ -63,30 +63,32 @@ class _HomeListState extends State<HomeList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(children: [
+      body: Column(children: [
         ClipPath(
           clipper: WaveClipper(),
           child: Container(
-              height: 300,
+              height: 250,
               color: Colors.grey,
               child: Center(
                 child: img == null
                     ? const Text('')
                     : ClipRRect(
-                        child: Container(
-                            width: double.infinity,
-                            height: 300,
-                            child: Image(
-                              image: FileImage(img!),
-                              fit: BoxFit.cover,
-                            )),
+                        child: ClipPath(
+                          clipper: WaveClipper(),
+                          child: Container(
+                              width: double.infinity,
+                              height: 250,
+                              child: Image(
+                                image: FileImage(img!),
+                                fit: BoxFit.cover,
+                              )),
+                        ),
                       ),
               )),
         ),
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: 600,
             decoration: BoxDecoration(color: Colors.white),
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
             child: Column(
@@ -96,7 +98,9 @@ class _HomeListState extends State<HomeList> {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    const SizedBox(width: 250,),
+                    const SizedBox(
+                      width: 250,
+                    ),
                     Container(
                       padding: EdgeInsets.all(10),
                       margin: EdgeInsets.only(right: 15),
@@ -128,7 +132,7 @@ class _HomeListState extends State<HomeList> {
                     ),
                     const Elements(),
                     SizedBox(
-                      height: 50,
+                      height: 20,
                     ),
                     Row(
                       children: [
